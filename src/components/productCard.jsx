@@ -31,12 +31,12 @@ function ProductCard(props) {
 
             <h2>{props.name}</h2>
             <p>Price: ₹{props.price}</p>
-
+ 
             <button onClick={decreaseQuantity}>-</button>
             <span> Quantity: {quantity} </span>
              <button onClick={increasesQuantity}>+</button>
 
-             <p>Total Price: {totalPrice}</p>
+             <p>Total Price: ₹{totalPrice.toLocaleString('en-IN')}</p>
         </div>
     );
 }
