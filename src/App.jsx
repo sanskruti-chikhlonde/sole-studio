@@ -4,7 +4,8 @@ import ProductCard from './components/productCard'
 function App() {
   return (
     <div>
-      <productCard />
+      <ProductCard name="Nike Air Max" price={5000} />
+      <ProductCard name="Adidas Superstar" price={4000} />
     </div>
   )
 }

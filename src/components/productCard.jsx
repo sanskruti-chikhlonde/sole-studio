@@ -1,9 +1,10 @@
-function productCard() {
+function ProductCard(props) {
     return (
         <div>
-            <h2>Sole Studio</h2>
+            <h2>{props.name}</h2>
+            <p>Price: ₹{props.price}</p>
         </div>
     );
 }
 
-export default productCard;
+export default ProductCard;
