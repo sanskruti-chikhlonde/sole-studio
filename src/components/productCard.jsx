@@ -1,8 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function ProductCard(props) {
 
     const [quantity, setQuantity] = useState(1)
+    const [totalPrice,setTotalPrice] =useState(props.price)
+
+    useEffect(() => {
+        setTotalPrice(quantity * props.price)
+    }, [quantity, props.price])
 
     function increasesQuantity(){
         if (quantity >= 9) {
@@ -28,6 +33,8 @@ function ProductCard(props) {
             <button onClick={decreaseQuantity}>-</button>
             <span> Quantity: {quantity} </span>
              <button onClick={increasesQuantity}>+</button>
+
+             <p>Total Price: {totalPrice}</p>
         </div>
     );
 }
