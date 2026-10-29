@@ -4,14 +4,30 @@ function ProductCard(props) {
 
     const [quantity, setQuantity] = useState(1)
 
+    function increasesQuantity(){
+        if (quantity >= 9) {
+            alert('Maximum quantity is 9')
+        } else {
+            setQuantity(quantity + 1)
+        }
+    }
+
+    function decreaseQuantity(){
+        if (quantity <=1){
+            alert("Minimum quantity is 1")
+        } else {
+            setQuantity(quantity - 1)
+        } 
+    }
+
     return (
         <div>
             <h2>{props.name}</h2>
             <p>Price: ₹{props.price}</p>
 
-            <button onClick={() => setQuantity(quantity - 1)}>-</button>
+            <button onClick={decreaseQuantity}>-</button>
             <span> Quantity: {quantity} </span>
-             <button onClick={() => setQuantity(quantity + 1)}>+</button>
+             <button onClick={increasesQuantity}>+</button>
         </div>
     );
 }
