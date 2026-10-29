@@ -2,6 +2,7 @@ import './App.css'
 import ProductCard from './components/productCard'
 
 function App() {
+
   return (
     <div>
       <ProductCard name="Nike Air Max" price={5000} />
